@@ -1,0 +1,8 @@
+<div class="row">
+  <form #login="ngForm" (ngSubmit)="verifyUser(login)" class="card col-md-4 offset-md-4" >
+      <h2 class="text-center ingcol" >Ingresa</h2>
+    <input type="text" class="form-control" placeholder="email" name="email" ngModel>
+    <input type="password" class="form-control" placeholder="password" name="password" ngModel>
+    <button type="submit" class="btn">Ingresar</button>
+  </form>
+</div>

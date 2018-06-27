@@ -1,0 +1,8 @@
+<div class="row">
+  <form (submit)='addUser($event)' class="card col-md-4 offset-md-4" >
+      <h2 class="text-center ingcol" >Registrate</h2>
+    <input type="text" class="form-control" placeholder="email" name="email" [(ngModel)]="email">
+    <input type="password" class="form-control" placeholder="password" name="password" [(ngModel)]="password">
+    <button type="submit" class="btn">Guardar</button>
+  </form>
+</div>

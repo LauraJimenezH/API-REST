@@ -1,0 +1,51 @@
+<button class="btn btn-danger col-md-2 offset-md-5" (click)='logout()'>Cerrar Sesión</button>
+<p></p>
+<div class="row">
+  <h1 class="col-md-5 offset-md-4">Crear Proyecto</h1>
+  <form (submit)='addProyect($event)' class="card col-md-6 offset-md-3">
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Nombre del Proyecto" class="form-control">
+    <input type="text" name="cliente" [(ngModel)]="cliente" placeholder="Nombre del Cliente" class="form-control">
+    <input type="text" name="description" [(ngModel)]="description" placeholder="Descripción" class="form-control">
+    <input type="text" name="fechainicio" [(ngModel)]="fechainicio" placeholder="Fecha de inicio" class="form-control">
+    <input type="text" name="fechafin" [(ngModel)]="fechafin" placeholder="Fin esperado" class="form-control">
+    <button type="submit" class="btn">
+      Crear Proyecto
+    </button>
+  </form>
+  <table class="table col-md-10 offset-md-1 card table-responsive">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Cliente</th>
+        <th>Descripción</th>
+        <th>F. Inicio</th>
+        <th>F. Fin</th>
+        <th>Operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let proyect of proyects'>
+        <td>
+          {{proyect.title}}
+        </td>
+        <td>
+          {{proyect.cliente}}
+        </td>
+        <td>
+          {{proyect.description}}
+        </td>
+        <td>
+          {{proyect.fechainicio}}
+        </td>
+        <td>
+          {{proyect.fechafin}}
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteProyect(proyect._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
